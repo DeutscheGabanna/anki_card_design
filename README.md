@@ -19,3 +19,32 @@ This is a respository containing CSS and HTML code that, if imported into Anki, 
    - Image
    - Decorative image
    - Extra
+
+## Other stuff worth mentioning
+### Tables
+All the good practises of creating tables in HTML apply here.
+
+Here's a sample table representing easy ways of formatting the table and letting the CSS do the rest.
+
+```
+<table>
+   <thead>
+      <th colspan=3>Header spanning three cells</th>
+      <th>One-cell header</th>
+   </thead>
+   <tr>
+      <th width=10%>Vertical header on the left</th>
+      <td>one</td>
+      <td>two</td>
+      <td>three</td>
+   </tr>
+   <tr>
+      <td>bip</td>
+      <td>bop</td>
+      <td colspan=2>boop</td>
+</table>
+```
+
+This creates a table like this:
+
+![sample table](https://i.imgur.com/55jwCbv.png)
