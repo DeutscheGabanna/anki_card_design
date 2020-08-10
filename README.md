@@ -24,28 +24,28 @@ This is a respository containing CSS and HTML code that, if imported into Anki, 
 Either see the HTML of Front card of the Basic card in the sample deck, or look at this comment I left in ![front_card_thetobruk.html](https://github.com/DeutscheGabanna/anki_card_design/blob/master/front_card_thetobruk.html)
 
 ```
-<!------------within this comment is a SHORT GUIDE on adding commands in different languages for the automatic picker-->
+<!--within this comment is a SHORT GUIDE on adding commands in different languages for the automatic picker-->
 			
-			<!--'p' means paragraph and is used to separate the commands from one another-->
-			<!--'lang' contains the language code of your choosing to be caught by CSS according to the algorithm-->
-			<!--'class' contains all the necessary info for the automatic picker to decide which message to show-->
+	<!--'p' means paragraph and is used to separate the commands from one another-->
+	<!--'lang' contains the language code of your choosing to be caught by CSS according to the algorithm-->
+	<!--'class' contains all the necessary info for the automatic picker to decide which message to show-->
+	<!--{{Card}} is used as the basis if the user did not specify anything in the language fields (here: Front language and Back language).
+		
+	If you name your card "cs_ENG ct_GER", you're telling the picker to ASSUME that the Front is in English, and the back is in German.
+		cs_ here means "card source (language)" and ct_ means "card target (language)".
+		cs_ and ct_ prefixes are important here, because otherwise the code wouln't be able to distinguish between ENG in the card name and ENG in the fields.
+	Naming your card like this saves you time, because otherwise you'd have to specify the language in the fields every you make a new card.-->
 			
-			<!--{{Card}} is used as the basis if the user did not specify anything in the language fields (here: Front language and Back language).
-				If you name your card "cs_ENG ct_GER", you're telling the picker to ASSUME that the Front is in English, and the back is in German.
-					cs_ here means "card source (language)" and ct_ means "card target (language)".
-					cs_ and ct_ prefixes are important here, because otherwise the code wouln't be able to distinguish between ENG in the card name and ENG in the fields.
-				Naming your card like this saves you time, because otherwise you'd have to specify the language in the fields every you make a new card.-->
+	<!--If the fields are indeed specify (you wrote something in the "Front language" or "Back language" fields), then you're basically telling the card this:
+		"I know the card usually contains an English term on the first field and German translation on the back field, but this time make an exception - the front's in Jewish and the back's in Finnish"
+		fs_ here means "field source (language" and ft_ means "field target (language)"
+	Fields always have a priority over the card name.-->
 			
-			<!--If the fields are indeed specify (you wrote something in the "Front language" or "Back language" fields), then you're basically telling the card this:
-				"I know the card usually contains an English term on the first field and German translation on the back field, but this time make an exception - the front's in Jewish and the back's in Finnish"
-					fs_ here means "field source (language" and ft_ means "field target (language)"
-				Fields always have a priority over the card name.-->
+	<p lang="PL" class="{{Card}} fs_{{Front language}} ft_{{Back language}}">Rozwiń koncept:</p>
+	<p lang="ENG" class="{{Card}} fs_{{Front language}} ft_{{Back language}}">Expound on:</p>
+	<p lang="GER" class="{{Card}} fs_{{Front language}} ft_{{Back language}}">Erkläre es:</p>
 			
-			<p lang="PL" class="{{Card}} fs_{{Front language}} ft_{{Back language}}">Rozwiń koncept:</p>
-			<p lang="ENG" class="{{Card}} fs_{{Front language}} ft_{{Back language}}">Expound on:</p>
-			<p lang="GER" class="{{Card}} fs_{{Front language}} ft_{{Back language}}">Erkläre es:</p>
-			
-			<!--you can add as many supported commands as you please following this pattern-->
+<!--you can add as many supported commands as you please following this pattern-->
 ```
 
 ## Other stuff worth mentioning
