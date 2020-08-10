@@ -1,0 +1,77 @@
+<!--CLOZE CARD-------------------------------->
+
+<!--COLOUR RIBBON----------------------------->
+<div class="topbar {{Deck}} {{Tags}}"></div>
+
+<!--MAIN WINDOW----------------------------->
+
+<!--CARD INFO----------------------------------->
+<div class="window_container">
+	<div class="window_title">{{Deck}}
+		<div>
+			<button class="window_minimize"></button>
+			<button class="window_expand"></button>
+			<button class="window_times"></button>
+		</div>
+	</div>
+	<ul class="window_toolbar">
+		<li><div class="window_toolbar_category"><u>C</u>ard:</div>{{Type}}</li>
+		<li><div class="window_toolbar_category"><u>T</u>ype:</div>{{Card}}</li>
+	</ul>
+	<!--END OF CARD INFO-------------------------->
+
+	<div class="window_container_inner force_size">
+
+
+
+		<!-- CARD CONTENT=====================================-->
+		<h2 class="{{Deck}} {{Tags}}">
+			<h2 class="{{Deck}} {{Tags}}">
+				<div class="cl_style {{Deck}} {{Tags}}"> <!--this div guarantees that the elided part will be coloured according to your conditional colour schema, for example yellow for English or red for German-->
+					{{cloze::Text}}
+				</div>
+			</h2>
+		</h2>
+		<!--END OF CARD CONTENT===============================-->
+
+
+
+	</div>
+
+	<!--FOOTER------------------------------------>
+	<div class="window_statusbar">
+		<!--TAGS-->
+		<div class="window_statusbar_element">
+			<b><u>T</u>ags:</b>
+		</div>
+		<div class="window_statusbar_element tags">
+			{{#Tags}}
+				<em>front tags disabled</em> <!--sometimes tags can act as a hint-->
+			{{/Tags}}
+			{{^Tags}}
+				<em>no tags</em> <div class="custom_icon warning"></div>
+			{{/Tags}}
+		</div>
+		<!--EXTRA-->
+		<div class="window_statusbar_element">
+			<b><u>E</u>xtra:</b>
+		</div>
+		<div class="window_statusbar_element extra">
+			{{#Extra}}
+				<em>front extra disabled</em>
+			{{/Extra}}
+			{{^Extra}}
+				<em>---</em>
+			{{/Extra}}
+		</div>
+		<!--END OF FOOTER----------------------------->
+
+	</div>
+
+</div>
+<!--END OF MAIN WINDOW----------------------------->
+
+
+<!--DIRECTIONALITY WINDOW (shows flags)------------------------->
+	<!--not needed here because I assume we've got plenty of context in the cloze-->
+<!--END DIRECTIONALITY WINDOW (shows flags)--------------------->

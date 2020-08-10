@@ -1,0 +1,437 @@
+/*--------------------------------------------------*/
+/*----------WINDOWS STYLING ------------------------*/
+
+/*CSS for the look of Windows 95, but removing these will mess up the div scaffolding (especially the _containers). Proceed with caution if you want to edit these. */
+
+.window_container {
+	margin-top: 22px;
+	border: 2px solid;
+	border-bottom-color: #535353;
+	border-right-color: #535353;
+	border-left-color: #dbdbdb;
+	border-top-color: #dbdbdb;
+	background-color: #272828;
+	font-size: 13px;
+	padding: 2px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.window_container .window_container_inner {
+	margin-top: 5px;
+	border: 2px solid;
+	border-bottom-color: #c7c7c7;
+	border-right-color: #c7c7c7;
+	border-left-color: #808080;
+	border-top-color: #808080;
+	background-color: #272828;
+	padding: 10px;
+	text-align: center;
+}
+.window_container .window_container_inner ul.window_icons {
+	list-style: none;
+	padding: 2px 0;
+	margin: 0;
+}
+.window_container .window_container_inner ul.window_icons li {
+	display: inline-block;
+	padding: 0 5px;
+}
+ul.window_toolbar {
+	list-style: none;
+	width: 100%;
+	padding: 2px 0;
+	margin-top: 5px;
+	margin-left: -4px;
+	white-space: nowrap;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+ul.window_toolbar li {
+	display: inline-block;
+	padding: 0 5px;
+}
+ul.window_toolbar li .window_toolbar_category {
+	display: inline;
+	background-color: #808080;
+	padding: 2px;
+	margin-top: 2px;
+	margin-right: 5px;
+}
+.window_container .window_statusbar {
+	border: 2px solid;
+	border-bottom-color: #c7c7c7;
+	border-right-color: #c7c7c7;
+	border-left-color: #808080;
+	border-top-color: #808080;
+	background-color: #272828;
+	white-space: nowrap;
+	overflow: hidden;
+	width: fill;
+	height: 12px;
+}
+.window_statusbar .window_statusbar_element {
+	font-size: 10px;
+	white-space: nowrap;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	display: inline-block;
+}
+.window_statusbar .window_statusbar_element.tags {
+	width: 70%;
+}
+.window_statusbar .window_statusbar_element.extra {
+	width: 25%;
+}
+.window_title {
+	background-color: #808080;
+	padding: 2px 4px 3px 4px;
+	position: relative;
+	font-weight: bold;
+	color: #bcbcbc;
+	font-size: 13px;
+	margin: 0;
+}
+.window_title button {
+	border: 2px solid;
+	border-bottom-color: #444;
+	border-right-color: #444;
+	border-left-color: #a6a6a6;
+	border-top-color: #a6a6a6;
+	background-color: #bfbfbf;
+	position: absolute;
+	font-size: 9px;
+	line-height: 0;
+	padding: 1px;
+	height: 15px;
+	width: 15px;
+	top: 2px;
+}
+.window_title button.window_minimize {
+	right: 34px;
+}
+.window_title button.window_expand {
+	right: 18px;
+}
+.window_title button.window_times {
+	right: 2px;
+}
+.line-container {
+	text-align: center;
+}
+.alignleft {
+	float: left;
+}
+.aligntextleft {
+	text-align: center;
+}
+#hide {
+	display: none;
+}
+
+/*--------------------------------------------------*/
+/*---------DECK- OR TAG-DEPENDENT COLOURING --------*/
+
+/* 	CSS below is a colour scheme to differentiate between different decks or tags.
+	Here, if a text is in bold, it takes a different colour depending on whether it is in English vocabulary, German vocabulary, or Trivia */
+
+/* You can customise the naming where placeholders are given and duplicate the stylings to create more colour cases */
+/* IMPORTANT: If the tag or deck name contains a colon ":", you need to put this "\" before it. So, it must look like this "\:" to work properly. */
+
+/* COLOUR CASE ONE */
+h2.insert_your_deck_name_or_tag_name b,
+h3.insert_your_deck_name_or_tag_name b,
+h4.insert_your_deck_name_or_tag_name b,
+h5.insert_your_deck_name_or_tag_name b {
+	color: #e9c46a;
+}
+div.topbar.insert_your_deck_name_or_tag_name {
+	background-color: #e9c46a;
+}
+
+/* COLOUR CASE TWO */
+h2.insert_your_deck_name_or_tag_name\:test_of_special_symbol_mentioned_above b,
+h3.insert_your_deck_name_or_tag_name b,
+h4.insert_your_deck_name_or_tag_name b,
+h5.insert_your_deck_name_or_tag_name b {
+	color: #2a9d8f;
+}
+/* topbar is the coloured strip at the top of the card to help you distinguish it at the glance */
+div.topbar.insert_your_deck_name_or_tag_name {
+	background-color: #2a9d8f;
+}
+/* cloze sets the colour for the elided part in clozes */
+insert_your_deck_name_or_tag_name.cl_style .cloze {
+	font-weight: bold;
+	color: #e9c46a;
+}
+
+/* COLOUR CASE THREE */
+h2.insert_your_deck_name_or_tag_name b,
+h3.insert_your_deck_name_or_tag_name b,
+h4.insert_your_deck_name_or_tag_name b,
+h5.insert_your_deck_name_or_tag_name b {
+	color: #931621;
+}
+div.topbar.insert_your_deck_name_or_tag_name {
+	background-color: #729ee0;
+}
+
+/* COLOUR CASE FOUR */
+h2.insert_your_deck_name_or_tag_name b,
+h3.insert_your_deck_name_or_tag_name b,
+h4.insert_your_deck_name_or_tag_name b,
+h5.insert_your_deck_name_or_tag_name b {
+	color: #729ee0;
+}
+div.topbar.insert_your_deck_name_or_tag_name {
+	background-color: #931621;
+}
+
+
+
+div[class*="Bloomberg\:\:Studies"].cl_style .cloze {
+ font-weight: bold;
+ color: #2a9d8f;
+}
+div[class*="language\:\:german"].cl_style .cloze {
+ font-weight: bold;
+ color: #931621;
+}
+div[class*="Interpreting"].cl_style .cloze {
+ font-weight: bold;
+ color: #729ee0;
+}
+
+/*------------------------------------------------*/
+/*--------GENERAL --------------------------------*/
+
+/* delete this or modify if looks bad to you */
+a[href] {
+ color: white;
+ text-decoration: underline;
+ background-color: #464646;
+}
+
+/* stops images from going through the window */
+img {
+	max-width: 95%;
+}
+
+/*-------------------------------------------------*/
+/*--------ANKI-SPECIFIC ---------------------------*/
+
+.card {
+ color: white;
+}
+.cl_style .cloze {
+ font-weight: bold;
+ color: lightgray;
+}
+
+/*------------------------------------------*/
+
+/* LANGUAGE DEPENDENT SETTINGS -------------*/
+
+/* first hide all messages*/
+
+p[lang] {
+	display: none;
+}
+
+/* assume that the target langauge is the same as the prototypical card setting which defaults Front to English and Back to Polish (data taken from the .ct_ class - abbr. "card target"). If the .ft_ class is not specified (no language code follows the class name such ass ft_PL or ft_ENG), that means that we can revert to the defaults specified in the card name as the class name ct_... */
+
+/* MESSAGE CORRESPONDENCES::
+Polish target --> Polish message
+English, German, Image target --> English message */
+
+p[lang="PL"].ct_PL:not(.ft_ENG):not(.ft_GER),
+p[lang="ENG"].ct_ENG:not(.ft_PL):not(.ft_GER),
+p[lang="GER"].ct_GER:not(.ft_PL):not(.ft_ENG),
+p[lang="ENG"].ct_IMG:not(.ft_GER):not(.ft_PL)
+p[lang="PL"].ct_IMG:not(.ft_GER):not(.ft_ENG) {
+	display: block;
+}
+
+/* overwrite the assumed language of choice if the target language field is specified (data taken from the .ft_ class - abbr. "field target"). Previously we used negation, so the card name defaults won't skew the results by unhiding unwanted messages. */
+
+p[lang="PL"].ft_PL,
+p[lang="ENG"].ft_ENG,
+p[lang="GER"].ft_GER {
+	display: block;
+}
+
+/* first establish the flag attributes */
+
+.flag {
+	background-size: 32px 23px;
+	border: none;
+	display: inline-block;
+	vertical-align: middle;
+	width: 32px;
+	height: 23px;
+}
+
+/* First, we check if the source language was specified by the user (fs_ is the abbreviation for "field source" and contains the language code specified by the user). If there is no such user-specification given, we assume the source language on the basis of the cs_ class (contains the assumed language code from the card name) */
+
+.flag.source.cs_BRE { background: url('_BRE_lg.png') repeat 0 0; }
+.flag.source.cs_AME { background: url('_AME_lg.png') repeat 0 0; }
+.flag.source.cs_PL:not(.fs_ENG):not(.fs_GER):not(.fs_IMG) { background: url('_PL_lg.png') repeat 0 0; }
+.flag.source.cs_GER:not(.fs_PL):not(.fs_ENG):not(.fs_IMG) { background: url('_GER_lg.png') repeat 0 0; }
+.flag.source.cs_IMG:not(.fs_ENG):not(.fs_GER):not(.fs_PL) { background: url('_IMG_lg.png') repeat 0 0; }
+.flag.source.cs_ENG:not(.fs_PL):not(.fs_GER):not(.fs_IMG) { background: url('_ENG_lg.png') repeat 0 0; }
+
+.flag.target.ct_BRE { background: url('_BRE_lg.png') repeat 0 0; }
+.flag.target.ct_AME { background: url('_AME_lg.png') repeat 0 0; }
+.flag.target.ct_PL:not(.ft_ENG):not(.ft_GER):not(.ft_IMG) { background: url('_PL_lg.png') repeat 0 0; }
+.flag.target.ct_GER:not(.ft_PL):not(.ft_ENG):not(.ft_IMG) { background: url('_GER_lg.png') repeat 0 0; }
+.flag.target.ct_IMG:not(.ft_ENG):not(.ft_GER):not(.ft_PL) { background: url('_IMG_lg.png') repeat 0 0; }
+.flag.target.ct_ENG:not(.ft_PL):not(.ft_GER):not(.ft_IMG) { background: url('_ENG_lg.png') repeat 0 0; }
+
+/* online links instead of local for debug purposes */
+/*.flag.source.cs_BRE { background: url('https://i.imgur.com/OBAlcjo.png') repeat 0 0; }
+.flag.source.cs_AME { background: url('https://i.imgur.com/KI75oIS.png') repeat 0 0; }
+.flag.source.cs_PL:not(.fs_ENG):not(.fs_GER):not(.fs_IMG) { background: url('https://i.imgur.com/OctMFZF.png') repeat 0 0; }
+.flag.source.cs_GER:not(.fs_PL):not(.fs_ENG):not(.fs_IMG) { background: url('https://i.imgur.com/mFhpQQr.png') repeat 0 0; }
+.flag.source.cs_IMG:not(.fs_ENG):not(.fs_GER):not(.fs_PL) { background: url('https://i.imgur.com/CNW5EbI.png') repeat 0 0; }
+.flag.source.cs_ENG:not(.fs_PL):not(.fs_GER):not(.fs_IMG) { background: url('https://i.imgur.com/OBAlcjo.png') repeat 0 0; }
+
+/* online links instead of local for debug purposes */
+/*.flag.target.cs_BRE { background: url('https://i.imgur.com/OBAlcjo.png') repeat 0 0; }
+.flag.target.cs_AME { background: url('https://i.imgur.com/KI75oIS.png') repeat 0 0; }
+.flag.target.ct_PL:not(.ft_ENG):not(.ft_GER):not(.ft_IMG) { background: url('https://i.imgur.com/OctMFZF.png') repeat 0 0; }
+.flag.target.ct_GER:not(.ft_PL):not(.ft_ENG):not(.ft_IMG) { background: url('https://i.imgur.com/mFhpQQr.png') repeat 0 0; }
+.flag.target.ct_IMG:not(.ft_ENG):not(.ft_GER):not(.ft_PL) { background: url('https://i.imgur.com/CNW5EbI.png') repeat 0 0; }
+.flag.target.ct_ENG:not(.ft_PL):not(.ft_GER):not(.ft_IMG) { background: url('https://i.imgur.com/OBAlcjo.png') repeat 0 0; }*/
+
+/* Then we try to unhide flags based on user-specified ft_ language codes (some cards assume, for example, that the Back field is in Polish, but the user may specify that it is indeed in German, so we need to account for that) */
+
+.flag.source.fs_PL { background: url('_PL_lg.png') repeat 0 0; }
+.flag.source.fs_ENG { background: url('_ENG_lg.png') repeat 0 0; }
+.flag.source.fs_GER { background: url('_GER_lg.png') repeat 0 0; }
+.flag.source.fs_IMG { background: url('_IMG_lg.png') repeat 0 0; }
+.flag.source.fs_AME { background: url('_AME_lg.png') repeat 0 0; }
+.flag.source.fs_BRE { background: url('_BRE_lg.png') repeat 0 0; }
+
+.flag.target.ft_PL { background: url('_PL_lg.png') repeat 0 0; }
+.flag.target.ft_ENG { background: url('_ENG_lg.png') repeat 0 0; }
+.flag.target.ft_GER { background: url('_GER_lg.png') repeat 0 0; }
+.flag.target.ft_IMG { background: url('_IMG_lg.png') repeat 0 0; }
+.flag.target.ft_AME { background: url('_AME_lg.png') repeat 0 0; }
+.flag.target.ft_BRE { background: url('_BRE_lg.png') repeat 0 0; }
+
+/*------------------------------------------*/
+
+/* TABLE -----------------------------------*/
+
+table {
+	margin: auto;
+	width: 95%;
+	font-size: 14px;
+	border: 1px white;
+}
+tr {
+	background-color: #3e3d39;
+}
+tbody th, tfoot th, th.blue {
+	background-color: #56638a;
+}
+thead th, th.green {
+	background-color: #63a088;
+}
+td.highlight.front {
+	background-color: #63a088;
+	color: white;
+}
+td.highlight.back {
+	background-color: #56638a;
+	color: white;
+}
+
+/*------------------------------------------*/
+
+/* UTILITIES -------------------------------*/
+
+.force_size {
+	max-height: 100%;
+	min-height: 200px;
+}
+.background {
+	background-color: #272828;
+}
+div.topbar {
+ background-color: lightgray;
+ position: absolute;
+ top: 0px;
+ left: 0px;
+ right: 0px;
+ height: 11px;
+}
+@media only screen and (max-width: 470px) {
+	.window_container {
+		width: 90%;
+	}
+}
+@media only screen and (min-width: 470px) {
+	.window_container {
+		width: 470px;
+	}
+}
+.custom_icon {
+	border: none;
+	display: inline-block;
+	vertical-align: middle;
+}
+.custom_icon.arrow {
+	background: url('_lg_arrow.png') repeat 0 0;
+	background-size: 32px 23px;
+	width: 32px;
+	height: 23px;
+}
+.custom_icon.warning {
+	background: url('https://i.imgur.com/JsfLVqo.png') repeat 0 0;
+	background-size: 10px 10px;
+	width: 10px;
+	height: 10px;
+}
+/*------------------------------------------*/
+
+/* CHOICE ----------------------------------*/
+	.choice_table {
+	width: 95%;
+	margin: auto;
+}
+.choice_container {
+	position: relative;
+	display: block;
+	width: 93%;
+	height: 40px;
+	padding-bottom: 15%;
+	margin: auto;
+	margin-bottom: 1%;
+	border-style: solid;
+	border-width: 2px;
+	border-color: grey;
+	border-radius: 3%;
+	box-shadow: 0px 1px 8px gray;
+}
+choice_button {
+	height: 100%;
+	width: 90%;
+	margin: 11px 5px 5px 10px;
+	word-wrap: break-word;
+	text-align: center;
+	font-weight: bold;
+	border: none;
+	background-color: transparent;
+	color: white;
+}
+.choice_bad {
+	background-color: #8c2331;
+	border-color: #c5283d;
+}
+.choice_good {
+	background-color: #56638a;
+	border-color: #3e455b;
+}
+
+/*------------------------------------------*/

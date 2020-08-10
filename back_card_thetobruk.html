@@ -1,0 +1,96 @@
+<!--YOU CAN OPTIONALLY INSERT A CONDITIONAL BRACKET LIKE THIS: {{#Back}} read more about them here: https://docs.ankiweb.net/#/templates/generation?id=selective-card-generation-->
+<!--FRONT CARD----------------------------->
+
+<!--COLOUR RIBBON----------------------------->
+<div class="topbar {{Deck}} {{Tags}}"></div>
+
+<!--MAIN WINDOW----------------------------->
+
+<!--CARD INFO----------------------------------->
+<div class="window_container">
+	<div class="window_title">{{Deck}}
+		<div>
+			<button class="window_minimize"></button>
+			<button class="window_expand"></button>
+			<button class="window_times"></button>
+		</div>
+	</div>
+	<ul class="window_toolbar">
+		<li><div class="window_toolbar_category"><u>C</u>ard:</div>{{Type}}</li>
+		<li><div class="window_toolbar_category"><u>T</u>ype:</div>{{Card}}</li>
+	</ul>
+	<!--END OF CARD INFO-------------------------->
+
+	<div class="window_container_inner force_size">
+
+
+
+		<!-- CARD CONTENT=====================================-->
+		<div class="window_container_inner force_size">
+			<h3>{{Front}}</h3>
+			<hr width="50%">
+			<h2 class="{{Deck}} {{Tags}}">
+				{{^Type Back? (yes or leave empty)}}
+					{{Back}}
+				{{/Type Back? (yes or leave empty)}}
+				
+				{{#Type Back? (yes or leave empty)}}
+					{{type:Back}}
+				{{/Type Back? (yes or leave empty)}}
+			</h2>
+			<br>
+			{{Decorative image}} <!--Decorative image is a term I use to refer to image NOT used as a *cue* for any card-->
+			{{Image}} <!--Image is the opposite of Decorative image - it IS used as a cue in at least one card, i.e. "how is this called? {{Image}}"-->
+		</div>
+		<!--END OF CARD CONTENT===============================-->
+
+
+
+	</div>
+
+	<!--FOOTER------------------------------------>
+	<div class="window_statusbar">
+		<!--TAGS-->
+		<div class="window_statusbar_element">
+			<b><u>T</u>ags:</b>
+		</div>
+		<div class="window_statusbar_element tags">
+			{{#Tags}}
+				<em>{{Tags}}</em>
+			{{/Tags}}
+			{{^Tags}}
+				<em>no tags</em> <div class="custom_icon warning"></div>
+			{{/Tags}}
+		</div>
+		<!--EXTRA-->
+		<div class="window_statusbar_element">
+			<b><u>E</u>xtra:</b>
+		</div>
+		<div class="window_statusbar_element extra">
+			{{#Extra}}
+				<em>{{Extra}}</em>
+			{{/Extra}}
+			{{^Extra}}
+				<em>---</em>
+			{{/Extra}}
+		</div>
+		<!--END OF FOOTER----------------------------->
+
+	</div>
+
+</div>
+<!--END OF MAIN WINDOW----------------------------->
+
+
+<!--NOTES WINDOW--------------------------------->
+{{#Notes}}
+	<div class="window_container">
+		<div class="window_title">Notes</div>
+		<div class="window_container_inner">
+			{{Notes}}
+		</div>
+	</div>
+{{/Notes}}
+<!--END NOTES WINDOW----------------------------->
+
+<!--YOU CAN OPTIONALLY INSERT A CONDITIONAL BRACKET LIKE THIS: {{/Back}} read more about them here: https://docs.ankiweb.net/#/templates/generation?id=selective-card-generation-->
