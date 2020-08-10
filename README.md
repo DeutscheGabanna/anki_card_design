@@ -10,12 +10,12 @@ This is a respository containing CSS and HTML code that, if imported into Anki, 
 1. Put the CSS file into this Anki folder:
    - **Windows**:  C:\Users\Administrator\AppData\Roaming\Anki2\yourankiaccountname\collection.media\
    - **Linux**:  ~\.local\share\Anki2\collection.media\\
-2. Download the file: [Sample deck Anki 95](https://github.com/DeutscheGabanna/anki_card_design/blob/master/Sample%20deck%20Anki%2095.apkg)
+2. Download the file: [Sample deck Anki 95](https://github.com/DeutscheGabanna/anki_card_design/raw/master/Sample%20deck%20Anki%2095.apkg)
    - The file contains everything except for the CSS code you've pasted earlier.
 3. Import the deck.
    - Open Anki
    - File > Import
-   - Choose [Sample deck Anki 95](https://github.com/DeutscheGabanna/anki_card_design/blob/master/Sample%20deck%20Anki%2095.apkg) file
+   - Choose [Sample deck Anki 95](https://github.com/DeutscheGabanna/anki_card_design/raw/master/Sample%20deck%20Anki%2095.apkg) file
 4. Enjoy
 
 ## Other stuff worth mentioning
