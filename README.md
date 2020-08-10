@@ -6,19 +6,17 @@ This is a respository containing CSS and HTML code that, if imported into Anki, 
 ![Sample look](https://preview.redd.it/n4gtwm93bef51.png?width=1024&auto=webp&s=340352a6b592e2851cbfc7c804be7a234f3542e4)
 
 ## How to use it?
-1. put the CSS into this Anki folder:
+1. Download [\_windows.css](.\_windows.css) file
+1. Put the CSS file into this Anki folder:
    - **Windows**:  C:\Users\Administrator\AppData\Roaming\Anki2\yourankiaccountname\collection.media\
-   - **Linux**:  ~\.local\share\Anki2\collection.media\
-2. When naming the file, append _ symbol at the beginning, otherwise Anki will delete the file when checking the media (for example "\_styling.css")
-3. Put the HTML for Front card in the front field, and Back card HTML in the Back field.
-4. Create or modify the necessary fields for the note type:
-   - Front
-   - Back
-   - Front language (default ENG)
-   - Back language (default PL)
-   - Image
-   - Decorative image
-   - Extra
+   - **Linux**:  ~\.local\share\Anki2\collection.media\\
+2. Download the file: [Sample deck Anki 95](https://github.com/DeutscheGabanna/anki_card_design/blob/master/Sample%20deck%20Anki%2095.apkg)
+   - The file contains everything except for the CSS code you've pasted earlier.
+3. Import the deck.
+   - Open Anki
+   - File > Import
+   - Choose [Sample deck Anki 95](https://github.com/DeutscheGabanna/anki_card_design/blob/master/Sample%20deck%20Anki%2095.apkg) file
+4. Enjoy
 
 ## Other stuff worth mentioning
 ### Tables
