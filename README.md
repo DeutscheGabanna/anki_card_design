@@ -6,7 +6,7 @@ This is a respository containing CSS and HTML code that, if imported into Anki, 
 ![Sample look](https://preview.redd.it/n4gtwm93bef51.png?width=1024&auto=webp&s=340352a6b592e2851cbfc7c804be7a234f3542e4)
 
 ## How to use it?
-1. Download [\_windows.css](.\_windows.css) file
+1. Download [\_windows.css](https://github.com/DeutscheGabanna/anki_card_design/blob/master/_windows.css) file
 1. Put the CSS file into this Anki folder:
    - **Windows**:  C:\Users\Administrator\AppData\Roaming\Anki2\yourankiaccountname\collection.media\
    - **Linux**:  ~\.local\share\Anki2\collection.media\\
