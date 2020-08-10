@@ -228,39 +228,33 @@ img {
  color: lightgray;
 }
 
-/*------------------------------------------*/
-
-/* LANGUAGE DEPENDENT SETTINGS -------------*/
-
-/* first hide all messages*/
+/*-------------------------------------------------*/
+/*--------LANGUAGE DEPENDENT SETTINGS -------------*/
 
 p[lang] {
 	display: none;
 }
 
-/* assume that the target langauge is the same as the prototypical card setting which defaults Front to English and Back to Polish (data taken from the .ct_ class - abbr. "card target"). If the .ft_ class is not specified (no language code follows the class name such ass ft_PL or ft_ENG), that means that we can revert to the defaults specified in the card name as the class name ct_... */
+/* here you can add your own supported languages or modify the existing ones */
+/* I made it a little easier to work with the language codes if you don't want to meddle with the CSS here - just use LANG1 for whatever the first language
+   would be in your case, LANG2 for the second, LANG3 for the third language of your choice */
+/* LANG_IMG means that the field contains an image rather than words in any of the languages */
 
-/* MESSAGE CORRESPONDENCES::
-Polish target --> Polish message
-English, German, Image target --> English message */
+p[lang="LANG1"].ct_LANG1:not(.ft_LANG2):not(.ft_LANG3),
+p[lang="LANG1"].ct_LANG_IMG:not(.ft_LANG3):not(.ft_LANG2),
 
-p[lang="PL"].ct_PL:not(.ft_ENG):not(.ft_GER),
-p[lang="ENG"].ct_ENG:not(.ft_PL):not(.ft_GER),
-p[lang="GER"].ct_GER:not(.ft_PL):not(.ft_ENG),
-p[lang="ENG"].ct_IMG:not(.ft_GER):not(.ft_PL)
-p[lang="PL"].ct_IMG:not(.ft_GER):not(.ft_ENG) {
+p[lang="LANG2"].ct_LANG2:not(.ft_LANG1):not(.ft_LANG3),
+p[lang="LANG2"].ct_LANG_IMG:not(.ft_LANG3):not(.ft_LANG1),
+
+p[lang="LANG3"].ct_LANG3:not(.ft_LANG1):not(.ft_LANG2) { /* don't put a comma at the end of the last item, as seen here */
 	display: block;
 }
 
-/* overwrite the assumed language of choice if the target language field is specified (data taken from the .ft_ class - abbr. "field target"). Previously we used negation, so the card name defaults won't skew the results by unhiding unwanted messages. */
-
-p[lang="PL"].ft_PL,
-p[lang="ENG"].ft_ENG,
-p[lang="GER"].ft_GER {
+p[lang="LANG1"].ft_LANG1,
+p[lang="LANG2"].ft_LANG2,
+p[lang="LANG3"].ft_LANG3 {
 	display: block;
 }
-
-/* first establish the flag attributes */
 
 .flag {
 	background-size: 32px 23px;
@@ -271,57 +265,32 @@ p[lang="GER"].ft_GER {
 	height: 23px;
 }
 
-/* First, we check if the source language was specified by the user (fs_ is the abbreviation for "field source" and contains the language code specified by the user). If there is no such user-specification given, we assume the source language on the basis of the cs_ class (contains the assumed language code from the card name) */
+/* suggestion for how flags could look like based on my flag-set: https://imgur.com/a/zhVzUsx */
+/* if you have your own flags, change the url('') here to implement them */
+/* although CSS does resize the flags automatically, flags with a widely different aspect from the one used here may look strange */
 
-.flag.source.cs_BRE { background: url('_BRE_lg.png') repeat 0 0; }
-.flag.source.cs_AME { background: url('_AME_lg.png') repeat 0 0; }
-.flag.source.cs_PL:not(.fs_ENG):not(.fs_GER):not(.fs_IMG) { background: url('_PL_lg.png') repeat 0 0; }
-.flag.source.cs_GER:not(.fs_PL):not(.fs_ENG):not(.fs_IMG) { background: url('_GER_lg.png') repeat 0 0; }
-.flag.source.cs_IMG:not(.fs_ENG):not(.fs_GER):not(.fs_PL) { background: url('_IMG_lg.png') repeat 0 0; }
-.flag.source.cs_ENG:not(.fs_PL):not(.fs_GER):not(.fs_IMG) { background: url('_ENG_lg.png') repeat 0 0; }
+.flag.source.cs_LANG1:not(.fs_LANG2):not(.fs_LANG3):not(.fs_LANG_IMG) { background: url('https://i.imgur.com/xRNoCBc.png') repeat 0 0; }
+.flag.source.cs_LANG3:not(.fs_LANG1):not(.fs_LANG2):not(.fs_LANG_IMG) { background: url('https://i.imgur.com/FToYKbm.png') repeat 0 0; }
+.flag.source.cs_LANG_IMG:not(.fs_LANG2):not(.fs_LANG3):not(.fs_LANG1) { background: url('https://i.imgur.com/hGUYKlo.png') repeat 0 0; }
+.flag.source.cs_LANG2:not(.fs_LANG1):not(.fs_LANG3):not(.fs_LANG_IMG) { background: url('https://i.imgur.com/LvKnkSA.png') repeat 0 0; }
 
-.flag.target.ct_BRE { background: url('_BRE_lg.png') repeat 0 0; }
-.flag.target.ct_AME { background: url('_AME_lg.png') repeat 0 0; }
-.flag.target.ct_PL:not(.ft_ENG):not(.ft_GER):not(.ft_IMG) { background: url('_PL_lg.png') repeat 0 0; }
-.flag.target.ct_GER:not(.ft_PL):not(.ft_ENG):not(.ft_IMG) { background: url('_GER_lg.png') repeat 0 0; }
-.flag.target.ct_IMG:not(.ft_ENG):not(.ft_GER):not(.ft_PL) { background: url('_IMG_lg.png') repeat 0 0; }
-.flag.target.ct_ENG:not(.ft_PL):not(.ft_GER):not(.ft_IMG) { background: url('_ENG_lg.png') repeat 0 0; }
+.flag.target.ct_LANG1:not(.ft_LANG2):not(.ft_LANG3):not(.ft_LANG_IMG) { background: url('_LANG1.png') repeat 0 0; }
+.flag.target.ct_LANG3:not(.ft_LANG1):not(.ft_LANG2):not(.ft_LANG_IMG) { background: url('https://i.imgur.com/FToYKbm.png') repeat 0 0; }
+.flag.target.ct_LANG_IMG:not(.ft_LANG2):not(.ft_LANG3):not(.ft_LANG1) { background: url('https://i.imgur.com/hGUYKlo.png') repeat 0 0; }
+.flag.target.ct_LANG2:not(.ft_LANG1):not(.ft_LANG3):not(.ft_LANG_IMG) { background: url('https://i.imgur.com/LvKnkSA.png') repeat 0 0; }
 
-/* online links instead of local for debug purposes */
-/*.flag.source.cs_BRE { background: url('https://i.imgur.com/OBAlcjo.png') repeat 0 0; }
-.flag.source.cs_AME { background: url('https://i.imgur.com/KI75oIS.png') repeat 0 0; }
-.flag.source.cs_PL:not(.fs_ENG):not(.fs_GER):not(.fs_IMG) { background: url('https://i.imgur.com/OctMFZF.png') repeat 0 0; }
-.flag.source.cs_GER:not(.fs_PL):not(.fs_ENG):not(.fs_IMG) { background: url('https://i.imgur.com/mFhpQQr.png') repeat 0 0; }
-.flag.source.cs_IMG:not(.fs_ENG):not(.fs_GER):not(.fs_PL) { background: url('https://i.imgur.com/CNW5EbI.png') repeat 0 0; }
-.flag.source.cs_ENG:not(.fs_PL):not(.fs_GER):not(.fs_IMG) { background: url('https://i.imgur.com/OBAlcjo.png') repeat 0 0; }
+.flag.source.fs_LANG1 { background: url('https://i.imgur.com/xRNoCBc.png') repeat 0 0; }
+.flag.source.fs_LANG2 { background: url('https://i.imgur.com/LvKnkSA.png') repeat 0 0; }
+.flag.source.fs_LANG3 { background: url('https://i.imgur.com/FToYKbm.png') repeat 0 0; }
+.flag.source.fs_LANG_IMG { background: url('https://i.imgur.com/hGUYKlo.png') repeat 0 0; }
 
-/* online links instead of local for debug purposes */
-/*.flag.target.cs_BRE { background: url('https://i.imgur.com/OBAlcjo.png') repeat 0 0; }
-.flag.target.cs_AME { background: url('https://i.imgur.com/KI75oIS.png') repeat 0 0; }
-.flag.target.ct_PL:not(.ft_ENG):not(.ft_GER):not(.ft_IMG) { background: url('https://i.imgur.com/OctMFZF.png') repeat 0 0; }
-.flag.target.ct_GER:not(.ft_PL):not(.ft_ENG):not(.ft_IMG) { background: url('https://i.imgur.com/mFhpQQr.png') repeat 0 0; }
-.flag.target.ct_IMG:not(.ft_ENG):not(.ft_GER):not(.ft_PL) { background: url('https://i.imgur.com/CNW5EbI.png') repeat 0 0; }
-.flag.target.ct_ENG:not(.ft_PL):not(.ft_GER):not(.ft_IMG) { background: url('https://i.imgur.com/OBAlcjo.png') repeat 0 0; }*/
+.flag.target.ft_LANG1 { background: url('https://i.imgur.com/xRNoCBc.png') repeat 0 0; }
+.flag.target.ft_LANG2 { background: url('https://i.imgur.com/LvKnkSA.png') repeat 0 0; }
+.flag.target.ft_LANG3 { background: url('https://i.imgur.com/FToYKbm.png') repeat 0 0; }
+.flag.target.ft_LANG_IMG { background: url('https://i.imgur.com/hGUYKlo.png') repeat 0 0; }
 
-/* Then we try to unhide flags based on user-specified ft_ language codes (some cards assume, for example, that the Back field is in Polish, but the user may specify that it is indeed in German, so we need to account for that) */
-
-.flag.source.fs_PL { background: url('_PL_lg.png') repeat 0 0; }
-.flag.source.fs_ENG { background: url('_ENG_lg.png') repeat 0 0; }
-.flag.source.fs_GER { background: url('_GER_lg.png') repeat 0 0; }
-.flag.source.fs_IMG { background: url('_IMG_lg.png') repeat 0 0; }
-.flag.source.fs_AME { background: url('_AME_lg.png') repeat 0 0; }
-.flag.source.fs_BRE { background: url('_BRE_lg.png') repeat 0 0; }
-
-.flag.target.ft_PL { background: url('_PL_lg.png') repeat 0 0; }
-.flag.target.ft_ENG { background: url('_ENG_lg.png') repeat 0 0; }
-.flag.target.ft_GER { background: url('_GER_lg.png') repeat 0 0; }
-.flag.target.ft_IMG { background: url('_IMG_lg.png') repeat 0 0; }
-.flag.target.ft_AME { background: url('_AME_lg.png') repeat 0 0; }
-.flag.target.ft_BRE { background: url('_BRE_lg.png') repeat 0 0; }
-
-/*------------------------------------------*/
-
-/* TABLE -----------------------------------*/
+/*-------------------------------------------------*/
+/*--------TABLE -----------------------------------*/
 
 table {
 	margin: auto;
@@ -347,11 +316,10 @@ td.highlight.back {
 	color: white;
 }
 
-/*------------------------------------------*/
+/*-------------------------------------------------*/
+/*--------UTILITIES -------------------------------*/
 
-/* UTILITIES -------------------------------*/
-
-.force_size {
+.force_size { /* without this most windows would be too small unless they had several lines of content */
 	max-height: 100%;
 	min-height: 200px;
 }
@@ -366,7 +334,7 @@ div.topbar {
  right: 0px;
  height: 11px;
 }
-@media only screen and (max-width: 470px) {
+@media only screen and (max-width: 470px) { /* this ensures that even if you use the cards on mobile, the window stays sufficiently wide */
 	.window_container {
 		width: 90%;
 	}
@@ -381,57 +349,15 @@ div.topbar {
 	display: inline-block;
 	vertical-align: middle;
 }
-.custom_icon.arrow {
-	background: url('_lg_arrow.png') repeat 0 0;
+.custom_icon.arrow { /* icon for showing direction, e.g. ENG --> IMG */
+	background: url('https://i.imgur.com/kJXF6kX.png') repeat 0 0;
 	background-size: 32px 23px;
 	width: 32px;
 	height: 23px;
 }
-.custom_icon.warning {
+.custom_icon.warning { /* icon for showing missing tags more visibly than just error message */
 	background: url('https://i.imgur.com/JsfLVqo.png') repeat 0 0;
 	background-size: 10px 10px;
 	width: 10px;
 	height: 10px;
 }
-/*------------------------------------------*/
-
-/* CHOICE ----------------------------------*/
-	.choice_table {
-	width: 95%;
-	margin: auto;
-}
-.choice_container {
-	position: relative;
-	display: block;
-	width: 93%;
-	height: 40px;
-	padding-bottom: 15%;
-	margin: auto;
-	margin-bottom: 1%;
-	border-style: solid;
-	border-width: 2px;
-	border-color: grey;
-	border-radius: 3%;
-	box-shadow: 0px 1px 8px gray;
-}
-choice_button {
-	height: 100%;
-	width: 90%;
-	margin: 11px 5px 5px 10px;
-	word-wrap: break-word;
-	text-align: center;
-	font-weight: bold;
-	border: none;
-	background-color: transparent;
-	color: white;
-}
-.choice_bad {
-	background-color: #8c2331;
-	border-color: #c5283d;
-}
-.choice_good {
-	background-color: #56638a;
-	border-color: #3e455b;
-}
-
-/*------------------------------------------*/
